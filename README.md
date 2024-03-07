@@ -9,7 +9,7 @@ This web-site was modified to create an application that enables to view and man
 N/A
 
 ## Usage
-1. Open http: WEBSITE.
+1. Open http: https://aksanah.github.io/employee-payroll-tracker/.
 2. Click the "Add employee" button. Enter first name, last name and salary.
 3. After adding an employee you will prompted to continue or cancel. If you choose to continue you can add another employee. If you choose to cancel you will see employee data is displayed on the page.
 
