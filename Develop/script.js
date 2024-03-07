@@ -8,14 +8,21 @@ const collectEmployees = function () {
   while (anotherEmployee) {
     let firstName = window.prompt("Enter First name");
     let lastName = window.prompt("Enter Last name");
-    let salary = window.prompt("Enter salary");
+    let salary;
+    while (true) {
+      salary = prompt("Enter salary");
+      if (!isNaN(salary)) {
+        break;
+      }
+      alert("Only numbers allowed!");
+    }
+
     let employee = {}; // object employee with properties: first name, last name, salary
     employee.firstName = firstName;
     employee.lastName = lastName;
     employee.salary = salary;
-    
     employees.push(employee); //add employee to employees array
-    anotherEmployee = confirm("Would you like to add another employee?");
+    anotherEmployee = confirm("Do you want to add another employee?");
   }
   console.log(employees);
   return employees;
@@ -24,14 +31,17 @@ const collectEmployees = function () {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
-  
+
   let sumSalary = 0;
-  console.log(typeof sumSalary);
   for (let i = 0; i < employeesArray.length; i++) {
     sumSalary += Number(employeesArray[i].salary);
   }
   averageSalary = sumSalary / employeesArray.length;
-  console.log(averageSalary);
+  console.log(
+    `The average employee salary between our ${
+      employeesArray.length
+    } employee(s) is ${Math.round(averageSalary * 100) / 100}`
+  );
 };
 
 // Select a random employee
@@ -39,10 +49,11 @@ const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
   const options = employeesArray;
   const index = Math.floor(Math.random() * options.length);
-      const computerChoice = options[index];
-
-      // window.alert(`The computer chose ${computerChoice}`);
-      console.log(`Computer choose ${computerChoice.firstName}`);
+  const computerChoice = options[index];
+  // window.alert(`The computer chose ${computerChoice}`);
+  console.log(
+    `Congratulations to ${computerChoice.firstName} ${computerChoice.lastName}, our random drawing winner!`
+  );
 };
 
 /*
