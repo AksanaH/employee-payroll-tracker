@@ -24,7 +24,7 @@ const collectEmployees = function () {
     employees.push(employee); //add employee to employees array
     anotherEmployee = confirm("Do you want to add another employee?");
   }
-  console.log(employees);
+  // console.log(employees);
   return employees;
 };
 
